@@ -2,5 +2,11 @@
   "name": "Black Graph",
   "version": "1.0",
   "description": "Show historical price data for products",
-  "manifest_version": 2
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["https://www.alza.cz/*"],
+      "js": ["node_modules/jquery/dist/jquery.min.js", "graphs/alza.js"]
+    }
+  ]
 }

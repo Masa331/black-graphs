@@ -1,0 +1,22 @@
+{
+  "name": "black-graph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "manifest.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theodik/black-graphs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theodik/black-graphs/issues"
+  },
+  "homepage": "https://github.com/theodik/black-graphs#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
