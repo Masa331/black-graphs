@@ -6,7 +6,11 @@
   "content_scripts": [
     {
       "matches": ["https://www.alza.cz/*"],
-      "js": ["node_modules/jquery/dist/jquery.min.js", "graphs/alza.js"]
+      "js": [
+        "node_modules/jquery/dist/jquery.min.js", 
+        "node_modules/plotly.js-dist/plotly.js",
+        "graphs/alza.js"
+      ]
     }
   ]
 }
