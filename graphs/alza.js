@@ -81,7 +81,7 @@ var client = elasticsearch.Client({
 
 var pricesPerDate;
 client.search({
-  index: 'alza',
+  index: 'test',
   query: {
     match: {
       url: url
