@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/theodik/black-graphs#readme",
   "dependencies": {
+    "dateformat": "^3.0.3",
     "elasticsearch-browser": "^15.2.0",
     "jquery": "^3.3.1",
     "plotly.js-dist": "^1.42.5"
