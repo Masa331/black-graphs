@@ -1,73 +1,73 @@
 var plot = function(dates, originalPrices, currentPrices) {
   trace1 = {
-    x: dates, 
-    y: originalPrices, 
+    x: dates,
+    y: originalPrices,
     error_x: {
-      color: '#1f77b4', 
-      symmetric: true, 
-      thickness: 2, 
-      type: 'percent', 
-      value: 10, 
-      visible: false, 
+      color: '#1f77b4',
+      symmetric: true,
+      thickness: 2,
+      type: 'percent',
+      value: 10,
+      visible: false,
       width: 4
-    }, 
-    fill: 'none', 
-    line: {width: 1}, 
-    marker: {color: 'rgb(17, 0, 255)'}, 
-    mode: 'markers+lines', 
-    name: 'Udaná původní cena', 
-    type: 'scatter', 
-    xsrc: 'masa331:0:987919', 
+    },
+    fill: 'none',
+    line: {width: 1},
+    marker: {color: 'rgb(17, 0, 255)'},
+    mode: 'markers+lines',
+    name: 'Udaná původní cena',
+    type: 'scatter',
+    xsrc: 'masa331:0:987919',
     ysrc: 'masa331:0:bdffc8'
   };
   trace2 = {
-    x: dates, 
-    y: currentPrices, 
-    marker: {color: 'rgb(255, 0, 4)'}, 
-    mode: 'markers+lines', 
-    name: 'Skutečná cena', 
-    type: 'scatter', 
-    xsrc: 'masa331:0:987919', 
+    x: dates,
+    y: currentPrices,
+    marker: {color: 'rgb(255, 0, 4)'},
+    mode: 'markers+lines',
+    name: 'Skutečná cena',
+    type: 'scatter',
+    xsrc: 'masa331:0:987919',
     ysrc: 'masa331:0:8f76fa'
   };
   data = [trace1, trace2];
   layout = {
-    autosize: true, 
+    autosize: true,
     legend: {
-      x: 0, 
-      y: 1.14, 
-      orientation: 'h', 
-      xanchor: 'left', 
+      x: 0,
+      y: 1.14,
+      orientation: 'h',
+      xanchor: 'left',
       yanchor: 'auto'
-    }, 
-    title: 'Vývoj skutečné a udané původní ceny', 
+    },
+    title: 'Vývoj skutečné a udané původní ceny',
     xaxis: {
-      automargin: true, 
-      autorange: true, 
-      domain: [0, 1], 
-      rangeselector: {visible: false}, 
-      showgrid: false, 
-      showline: false, 
-      showspikes: false, 
-      showticklabels: true, 
-      side: 'bottom', 
-      tickangle: 45, 
-      tickfont: {family: 'Arial'}, 
-      tickformat: '%-d.%-m.%Y', 
-      tickmode: 'auto', 
-      type: 'date', 
+      automargin: true,
+      autorange: true,
+      domain: [0, 1],
+      rangeselector: {visible: false},
+      showgrid: false,
+      showline: false,
+      showspikes: false,
+      showticklabels: true,
+      side: 'bottom',
+      tickangle: 45,
+      tickfont: {family: 'Arial'},
+      tickformat: '%-d.%-m.%Y',
+      tickmode: 'auto',
+      type: 'date',
       zeroline: true
-    }, 
+    },
     yaxis: {
-      autorange: true, 
-      domain: [0, 1], 
-      separatethousands: true, 
-      showgrid: false, 
+      autorange: true,
+      domain: [0, 1],
+      separatethousands: true,
+      showgrid: false,
       type: 'linear'
     }
   };
 
-  $("#detailPicture").append('<div id="pricesChart"></div>');
+  $("#detailPicture").append('<div id="pricesChart" style="position:relative;width:1024px;"></div>');
   Plotly.newPlot('pricesChart', {
     data: data,
     layout: layout
