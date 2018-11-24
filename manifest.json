@@ -9,6 +9,7 @@
       "js": [
         "node_modules/jquery/dist/jquery.min.js", 
         "node_modules/plotly.js-dist/plotly.js",
+        "node_modules/elasticsearch-browser/elasticsearch.min.js",
         "graphs/alza.js"
       ]
     }
