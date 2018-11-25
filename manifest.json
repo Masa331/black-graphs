@@ -11,7 +11,21 @@
         "node_modules/plotly.js-dist/plotly.js",
         "node_modules/elasticsearch-browser/elasticsearch.min.js",
         "node_modules/dateformat/lib/dateformat.js",
+        "lib/plot.js",
+        "data/alza.js",
         "graphs/alza.js"
+      ]
+    },
+    {
+      "matches": ["https://www.mall.cz/*"],
+      "js": [
+        "node_modules/jquery/dist/jquery.min.js", 
+        "node_modules/plotly.js-dist/plotly.js",
+        "node_modules/elasticsearch-browser/elasticsearch.min.js",
+        "node_modules/dateformat/lib/dateformat.js",
+        "lib/plot.js",
+        "data/mall.js",
+        "graphs/mall.js"
       ]
     }
   ]

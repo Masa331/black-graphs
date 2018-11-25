@@ -1,3 +1,12 @@
+var waitForEl = function(selector, callback) {
+  if (jQuery(selector).length) {
+    callback();
+  } else {
+    setTimeout(function() {
+      waitForEl(selector, callback);
+    }, 100);
+  }
+};
 
 var url = window.location.href;
 var client = elasticsearch.Client({
@@ -15,7 +24,7 @@ client.search({
 }).then(function (resp) {
   var pricesPerDate = resp.hits.hits.map(row => row['_source']);
 
-  ary = alzaData;
+  var ary = mallData;
 
   ary.sort(function(a, b) {
     aDate = Date.parse(a['date']);
@@ -32,8 +41,10 @@ client.search({
   currentPrices = ary.map(row => row['currentPrice']);
   originalPrices = ary.map(row => row['originalPrice']);
 
-  $("#detailPicture").append('<div id="pricesChart" style="position:relative;width:1024px;margin-top:160px;"></div>');
-  plot("pricesChart", dates, originalPrices, currentPrices);
+  waitForEl(".pro-wrapper", function() {
+    $(".pro-wrapper").append('<section class="pro-column" style="height:450px;width:100%"><div id="pricesChart"></div></section>');
+    plot("pricesChart", dates, originalPrices, currentPrices);
+  })
 }, function (err) {
   console.log("Something bad happened during data retrieving from Elastic");
   console.log(err.message);
